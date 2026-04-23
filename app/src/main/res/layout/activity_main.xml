@@ -14,61 +14,59 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:format="예약에 걸린 시간: %s!" />
+        android:text="예약에 걸린 시간: %s!" />
     <Button
         android:id="@+id/btn_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:format="예약 시작!" />
+        android:text="예약 시작!" />
         <RadioGroup
             android:id="@+id/rg"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <RadioButton
                 android:id="@+id/radio_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:format="날짜 설정(캘린더뷰)"
+                android:text="날짜 설정(캘린더뷰)"
                 />
             <RadioButton
                 android:id="@+id/radio_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:format="시간설정"
+                android:checked="true"
+                android:text="시간설정"
                 />
         </RadioGroup>
     <FrameLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <CalendarView
             android:id="@+id/calendar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content" />
         <TimePicker
             android:id="@+id/time_picker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:timePickerMode="spinner"
-            />
+            android:timePickerMode="spinner" />
     </FrameLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:gravity="bottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <Button
             android:id="@+id/btn_done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="예약완료"
+            android:layout_marginRight="20dp"
+            android:text="예약 완료!"
         />
         <TextView
             android:id="@+id/text_result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="예약완료"
-        />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </LinearLayout>
