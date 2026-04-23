@@ -18,10 +18,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity {
-    Chronometer chronometer;
+    Chronometer  chronometer;
     RadioGroup rg;
     CalendarView calendar;
     TimePicker timePick;
@@ -56,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 chronometer.setTextColor(Color.RED);
             }
         });
+
         btnDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,19 +62,16 @@ public class MainActivity extends AppCompatActivity {
                 chronometer.setTextColor(Color.BLUE);
             }
         });
+
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(@NonNull RadioGroup group, int checkedId) {
                 calendar.setVisibility(View.INVISIBLE);
                 timePick.setVisibility(View.INVISIBLE);
                 if(checkedId == R.id.radio_date)
-                {
                     calendar.setVisibility(View.VISIBLE);
-                }
                 else
-                {
                     timePick.setVisibility(View.VISIBLE);
-                }
             }
         });
     }
