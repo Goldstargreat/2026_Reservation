@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     DatePicker datePicker;
     TimePicker timePick;
     TextView textResult;
-    Button btnDone; //
+    Button btnDone; // 예약 완료
 
     int selectedYear, selectedMonth, selectedDay;
     int selectedHour, selectedMin;
