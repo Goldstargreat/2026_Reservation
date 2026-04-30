@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -8,20 +7,16 @@
     android:orientation="vertical"
     android:layout_margin="15dp"
     tools:context=".MainActivity">
+
     <Chronometer
         android:id="@+id/chronometer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:gravity="center"
-        android:text="20sp"
+        android:textSize="20sp"
         android:format="예약에 걸린 시간: %s"/>
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="예약시작"/>
+
     <RadioGroup
         android:id="@+id/rg"
         android:layout_width="wrap_content"
@@ -30,7 +25,7 @@
             android:id="@+id/radio_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="날짜설정(캘린더뷰)"/>
+            android:text="날짜설정(데이트피커)" />
         <RadioButton
             android:id="@+id/radio_time"
             android:layout_width="wrap_content"
@@ -38,34 +33,46 @@
             android:checked="true"
             android:text="시간설정"/>
     </RadioGroup>
+
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <CalendarView
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <DatePicker
             android:id="@+id/calendar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"/>
         <TimePicker
             android:id="@+id/time_picker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:timePickerMode="spinner"/>
     </FrameLayout>
+
     <LinearLayout
         android:orientation="horizontal"
-        android:gravity="bottom"
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="#CCCCCC"
+        android:padding="5dp">
+
+        <!-- [수정] 텍스트뷰를 버튼으로 변경하여 클릭 가능하게 만듦 -->
         <Button
             android:id="@+id/btn_done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:text="예약완료"/>
+            android:text="예약 완료"
+            android:layout_marginRight="10dp"/>
+
         <TextView
             android:id="@+id/text_result"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"/>
+            android:text="00월 00일 00시 00분 예약됨"
+            android:textSize="16sp"
+            android:textColor="#000000"/>
     </LinearLayout>
 </LinearLayout>
