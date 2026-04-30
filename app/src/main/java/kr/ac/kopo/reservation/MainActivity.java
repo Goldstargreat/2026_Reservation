@@ -19,11 +19,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    Chronometer chronometer;
+    Chronometer chronometer; // 시간 측정도구(스탑워치)
     RadioGroup rg;
-    DatePicker datePicker;
-    TimePicker timePick;
-    TextView textResult;
+    DatePicker datePicker; // 연도, 월, 일
+    TimePicker timePick; // 분 단위 설정
+    TextView textResult; // 언제 언제 예약되었다고 보여줌
     Button btnDone; // 예약 완료
 
     int selectedYear, selectedMonth, selectedDay;
